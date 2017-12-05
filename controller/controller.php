@@ -1,5 +1,16 @@
 <?php
-	include("koneksi/connection.php")
+	include("koneksi/connection.php");
+	
+	require_once "PHPUnit/Framework/TestCase.php";
+	
+	class controller extends PHPUnit_Framework_TestCase{
+		public function testSelect(){
+			include ("../koneksi/connection.php");
+			$query = mysqli_query($connect, "SELECT * FROM tbl_data");
+		}
+	}
+	
+	
 	function update_and_insert_data_gaji_karyawan_admin($id,$uang_makan,$bonus,$kasbon,$banyak1,$banyak2,$banyak3,$namabarang1,$namabarang2,$namabarang3,$harga1,$harga2,$harga3,$jumlah1,$jumlah2,$jumlah3,$jumlah_total,$gaji,$gaji_total){ //ungsi untuk mengupdate sekaligus insert dengan paramater untuk data-gaji-karyawan(admin).php
 		include ("koneksi/connection.php"); //koneksi ke database
 

@@ -1,15 +1,7 @@
 language: php
 php: "7.1.11"
-env:
-   global:
-      setup:basic
-      APP_ENV:local
-      APP_DEBUG:true
-      APP_KEY:IgxC8XrTr7zAr1lVffgiMZ5gUXsBaJyQZyagdqnKwhY=
-      DB_CONNECTION:mysql
-      CACHE_DRIVER:file
-      SESSION_DRIVER:file
-      QUEUE_DRIVER:sync
-
-sudo: "false"
-script: vendor/bin/phpunit	
+before_install:
+ php /home/travis/.phpenv/version/5.4.25/bin/composer.phar self-update
+before_script:
+ composer install 
+script: phpunit --configuration phpunit.xml --coverage-text	

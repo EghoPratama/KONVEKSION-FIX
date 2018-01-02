@@ -5,10 +5,8 @@ class tes extends PHPUnit_Framework_TestCase
 	function testUsername()
 	{
 		include ("koneksi/connection.php");
-		$login = mysqli_query($connect, "SELECT * FROM tbl_admin WHERE password = 'adminsatu'");
-		if($login === FALSE) { 
-			die(mysqli_error()); // TODO: better error handling
-		}
+		$sql = "SELECT * FROM tbl_admin WHERE password = 'adminsatu'";
+		$login = mysqli_query($connect,$sql);
 		$user = mysqli_num_rows($login);
 		$test_user = $user['username'];
 		
@@ -19,10 +17,8 @@ class tes extends PHPUnit_Framework_TestCase
 	function testUsernameFalse()
 	{
 		include ("koneksi/connection.php");
-		$login = mysqli_query($connect, "SELECT * FROM tbl_admin WHERE password = 'adminsatu'");
-		if($login === FALSE) { 
-			die(mysqli_error()); // TODO: better error handling
-		}
+		$sql = "SELECT * FROM tbl_admin WHERE password = 'adminsatu'";
+		$login = mysqli_query($connect,$sql);
 		$user = mysqli_num_rows($login);
 		$test_user = $user['username'];
 		
@@ -33,10 +29,8 @@ class tes extends PHPUnit_Framework_TestCase
 	function testPassword()
 	{
 		include ("koneksi/connection.php");
-		$login = mysqli_query($connect, "SELECT * FROM tbl_admin WHERE username = 'admin01'");
-		if($login === FALSE) { 
-			die(mysqli_error()); // TODO: better error handling
-		}
+		$sql = "SELECT * FROM tbl_admin WHERE username = 'admin01'";
+		$login = mysqli_query($connect,$sql);
 		$user = mysqli_num_rows($login);
 		$test_user = $user['password'];
 		
@@ -47,10 +41,8 @@ class tes extends PHPUnit_Framework_TestCase
 	function testPasswordFalse()
 	{
 		include ("koneksi/connection.php");
-		$login = mysqli_query($connect, "SELECT * FROM tbl_admin WHERE username = 'admin01'");
-		if($login === FALSE) { 
-			die(mysqli_error()); // TODO: better error handling
-		}
+		$sql = "SELECT * FROM tbl_admin WHERE username = 'admin01'";
+		$login = mysqli_query($connect,$sql);
 		$user = mysqli_num_rows($login);
 		$test_user = $user['password'];
 		

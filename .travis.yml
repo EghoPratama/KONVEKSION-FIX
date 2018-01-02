@@ -2,8 +2,10 @@ language: php
 php: "5.6"
 services: mysql
 before_install:
- - composer install
- - mysql -e 'CREATE DATABASE konveksion;' 
+ mysql -e 'CREATE DATABASE konveksion;'
+before_script:
+  - curl -s http://getcomposer.org/installer | php
+  - php composer.phar install 
 script: phpunit tes.php
 matrix:
  allow_failures: 

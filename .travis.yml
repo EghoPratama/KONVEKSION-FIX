@@ -6,7 +6,7 @@ before_install:
 before_script:
   - curl -s http://getcomposer.org/installer | php
   - php composer.phar install 
-script: phpunit tes.php
+script: phpunit UnitTestingTest.php
 matrix:
  allow_failures: 
   php: "5.6"

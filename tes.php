@@ -6,6 +6,9 @@ class tes extends PHPUnit_Framework_TestCase
 	{
 		include ("koneksi/connection.php");
 		$login = mysqli_query($connect, "SELECT * FROM tbl_admin WHERE password = 'adminsatu'");
+		if($login === FALSE) { 
+			die(mysqli_error()); // TODO: better error handling
+		}
 		$user = mysqli_num_rows($login);
 		$test_user = $user['username'];
 		
@@ -17,6 +20,9 @@ class tes extends PHPUnit_Framework_TestCase
 	{
 		include ("koneksi/connection.php");
 		$login = mysqli_query($connect, "SELECT * FROM tbl_admin WHERE password = 'adminsatu'");
+		if($login === FALSE) { 
+			die(mysqli_error()); // TODO: better error handling
+		}
 		$user = mysqli_num_rows($login);
 		$test_user = $user['username'];
 		
@@ -28,6 +34,9 @@ class tes extends PHPUnit_Framework_TestCase
 	{
 		include ("koneksi/connection.php");
 		$login = mysqli_query($connect, "SELECT * FROM tbl_admin WHERE username = 'admin01'");
+		if($login === FALSE) { 
+			die(mysqli_error()); // TODO: better error handling
+		}
 		$user = mysqli_num_rows($login);
 		$test_user = $user['password'];
 		
@@ -39,6 +48,9 @@ class tes extends PHPUnit_Framework_TestCase
 	{
 		include ("koneksi/connection.php");
 		$login = mysqli_query($connect, "SELECT * FROM tbl_admin WHERE username = 'admin01'");
+		if($login === FALSE) { 
+			die(mysqli_error()); // TODO: better error handling
+		}
 		$user = mysqli_num_rows($login);
 		$test_user = $user['password'];
 		

@@ -1,12 +1,13 @@
 <?php
- 
+
+require_once("PHPUnit/Framework/TestCase.php"); 
 class tes extends PHPUnit_Framework_TestCase
 {
 	function testUsername()
 	{
 		include ("koneksi/connection.php");
 		$login = mysqli_query($connect, "SELECT * FROM tbl_admin WHERE password = 'adminsatu'");
-		$user = mysqli_fetch_array($login);
+		$user = mysqli_num_rows($login);
 		$test_user = $user['username'];
 		
 		$content = $test_user;
@@ -17,7 +18,7 @@ class tes extends PHPUnit_Framework_TestCase
 	{
 		include ("koneksi/connection.php");
 		$login = mysqli_query($connect, "SELECT * FROM tbl_admin WHERE password = 'adminsatu'");
-		$user = mysqli_fetch_array($login);
+		$user = mysqli_num_rows($login);
 		$test_user = $user['username'];
 		
 		$content = $test_user;
@@ -28,7 +29,7 @@ class tes extends PHPUnit_Framework_TestCase
 	{
 		include ("koneksi/connection.php");
 		$login = mysqli_query($connect, "SELECT * FROM tbl_admin WHERE username = 'admin01'");
-		$user = mysqli_fetch_array($login);
+		$user = mysqli_num_rows($login);
 		$test_user = $user['password'];
 		
 		$content = $test_user;
@@ -39,7 +40,7 @@ class tes extends PHPUnit_Framework_TestCase
 	{
 		include ("koneksi/connection.php");
 		$login = mysqli_query($connect, "SELECT * FROM tbl_admin WHERE username = 'admin01'");
-		$user = mysqli_fetch_array($login);
+		$user = mysqli_num_rows($login);
 		$test_user = $user['password'];
 		
 		$content = $test_user;

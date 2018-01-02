@@ -2,7 +2,7 @@ language: php
 php: "7.1.11"
 before_install:
  composer install 
-script: phpunit tes.php
+script: phpunit UnitTestingTest.php
 matrix:
  allow_failures: 
   php: "7.1.11"

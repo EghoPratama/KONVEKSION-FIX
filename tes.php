@@ -7,11 +7,10 @@ class tes extends PHPUnit_Framework_TestCase
 		include ("koneksi/connection.php");
 		$sql = "SELECT * FROM tbl_admin WHERE password = 'adminsatu'";
 		$login = mysqli_query($connect,$sql);
-		$user = mysqli_num_rows($login);
-		$test_user = $user['username'];
-		
-		$content = $test_user;
-		$this->assertEquals('admin01',$content);
+		foreach($login as $test_user){
+			$content= $test_user['username'];
+		}	
+		return $this->assertEquals('admin01',$content);
 	}
 	
 	function testUsernameFalse()
@@ -20,10 +19,10 @@ class tes extends PHPUnit_Framework_TestCase
 		$sql = "SELECT * FROM tbl_admin WHERE password = 'adminsatu'";
 		$login = mysqli_query($connect,$sql);
 		$user = mysqli_num_rows($login);
-		$test_user = $user['username'];
-		
-		$content = $test_user;
-		$this->assertNotEquals('admin',$content);
+		foreach($login as $test_user){
+			$content= $test_user['username'];
+		}	
+		return $this->assertEquals('admin',$content);
 	}
 	
 	function testPassword()
@@ -31,11 +30,10 @@ class tes extends PHPUnit_Framework_TestCase
 		include ("koneksi/connection.php");
 		$sql = "SELECT * FROM tbl_admin WHERE username = 'admin01'";
 		$login = mysqli_query($connect,$sql);
-		$user = mysqli_num_rows($login);
-		$test_user = $user['password'];
-		
-		$content = $test_user;
-		$this->assertEquals('adminsatu',$content);
+		foreach($login as $test_user){
+			$content= $test_user['password'];
+		}	
+		return $this->assertEquals('adminsatu',$content);
 	}
 	
 	function testPasswordFalse()
@@ -43,11 +41,10 @@ class tes extends PHPUnit_Framework_TestCase
 		include ("koneksi/connection.php");
 		$sql = "SELECT * FROM tbl_admin WHERE username = 'admin01'";
 		$login = mysqli_query($connect,$sql);
-		$user = mysqli_num_rows($login);
-		$test_user = $user['password'];
-		
-		$content = $test_user;
-		$this->assertNotEquals('admin',$content);
+		foreach($login as $test_user){
+			$content= $test_user['password'];
+		}	
+		return $this->assertEquals('admin',$content);
 	}
 }
 ?>
